@@ -32,7 +32,6 @@ public class MainApplication extends Application {
         }
         //mRefWatcher = LeakCanary.install(this);
     }
-
     @Override
     public void onTerminate() {
         super.onTerminate();
