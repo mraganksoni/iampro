@@ -79,7 +79,8 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.ForgetActivity"></activity>
+        <activity android:name=".activities.ForgetActivity" />
+        <activity android:name=".activities.ProductActivity"></activity>
     </application>
 
 </manifest>
