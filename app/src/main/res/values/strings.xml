@@ -1,17 +1,17 @@
 <resources>
-  <string name="app_name">I Am Pro</string>
-  <string name="navigation_drawer_open">Open navigation drawer</string>
-  <string name="navigation_drawer_close">Close navigation drawer</string>
-  <string name="nav_header_desc">Navigation header</string>
-  <string name="action_settings">Settings</string>
+    <string name="app_name">I Am Pro</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
-  <string name="profile">Profile</string>
-  <string name="product_details">Product Details</string>
-  <string name="update_profile">Update Profile</string>
-  <string name="banner_image">banner Image</string>
-  <string name="change_password">Change Password</string>
-  <string name="join_friend">Join Friend</string>
-  <string name="image_gallery">Image Gallery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profile</string>
+    <string name="product_details">Product Details</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="banner_image">banner Image</string>
+    <string name="change_password">Change Password</string>
+    <string name="join_friend">Join Friend</string>
+    <string name="image_gallery">Image Gallery</string>
 </resources>
