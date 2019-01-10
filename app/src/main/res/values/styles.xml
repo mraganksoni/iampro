@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+
+    <item name="android:windowContentTransitions">true</item>
+    <item name="android:windowActivityTransitions">true</item>
+
+    <item name="android:windowEnterTransition">@android:transition/fade</item>
+    <item name="android:windowExitTransition">@android:transition/fade</item>
+    <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+    <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+    <item name="android:fragmentSharedElementEnterTransition">@android:transition/move</item>
+    <item name="android:fragmentSharedElementReturnTransition">@android:transition/move</item>
+  </style>
+
+  <style name="AppTheme.NoActionBar" parent="AppTheme">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="coordinatorLayoutStyle">@style/Widget.Design.CoordinatorLayout</item>
+  </style>
+
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark"></style>
+
+  <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark">
+    <item name="android:textColorSecondary">@android:color/white</item>
+  </style>
+
+
+  <!--          Login page Theme                -->
+  <style name="AppTheme.Login" parent="AppTheme.NoActionBar" >
+    <item name="android:statusBarColor">@color/loginPrimaryDark</item>
+    <item name="android:navigationBarColor">@color/loginPrimaryDark</item>
+    <item name="android:windowBackground">@color/loginPrimary</item>
+    <item name="colorPrimary">@color/loginPrimary</item>
+    <item name="colorPrimaryDark">@color/loginPrimaryDark</item>
+    <item name="colorAccent">@color/loginAccent</item>
+  </style>
+
+  <!--        Write Comment Dialog            -->
+  <style name="AppTheme.WriteCommentDialog" parent="Theme.AppCompat.Light.Dialog">
+    <item name="android:windowMinWidthMinor">100%</item>
+  </style>
+
+  <style name="DialogFadeAnimation" >
+    <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+    <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+  </style>
+
+</resources>

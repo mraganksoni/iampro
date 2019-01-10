@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/root"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/bg_header_loggedin_default"
+  android:fitsSystemWindows="true"
+  android:gravity="bottom"
+  android:orientation="vertical"
+  android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+  <com.mikhaellopez.circularimageview.CircularImageView
+    android:id="@+id/civAvatar"
+    android:layout_width="75dp"
+    android:layout_height="75dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginLeft="16dp"
+    android:src="@drawable/ic_person_black_24dp"
+    app:civ_border_width="3dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+
+  <FrameLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="8dp"
+    android:background="@color/color_transucent_black"
+    app:layout_constraintTop_toBottomOf="@id/civAvatar">
+    <TextView
+      android:id="@+id/tvUsername"
+      android:textStyle="bold"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:layout_marginBottom="8dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:ellipsize="end"
+      android:gravity="left"
+      android:maxLines="1"
+      android:text="Username not Found"
+      android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+      android:textColor="@android:color/primary_text_dark"
+      android:textSize="14sp"/>
+  </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

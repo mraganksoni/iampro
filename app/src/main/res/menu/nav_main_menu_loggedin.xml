@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/nav_my_profile"
+            android:icon="@drawable/ic_view_module_black_24dp"
+            android:title="My Profile" />
+        <item
+            android:id="@+id/nav_update_profile"
+            android:icon="@drawable/ic_update_black_24dp"
+            android:title="Update Profile" />
+        <item
+            android:id="@+id/nav_change_password"
+            android:icon="@drawable/ic_lock_black_24dp"
+            android:title="Change Password" />
+        <item
+            android:id="@+id/nav_join_friend"
+            android:icon="@drawable/ic_person_add_black_24dp"
+            android:title="Join Friend" />
+        <item
+            android:id="@+id/nav_image_gallery"
+            android:icon="@drawable/ic_image_black_24dp"
+            android:title="Image Gallery" />
+        <item
+            android:id="@+id/nav_video_gallery"
+            android:icon="@drawable/ic_video_library_black_24dp"
+            android:title="Video Gallery" />
+        <item
+            android:id="@+id/nav_product"
+            android:icon="@drawable/ic_shopping_basket_black_24dp"
+            android:title="Product" />
+        <item
+            android:id="@+id/nav_provide"
+            android:icon="@drawable/ic_file_document_black_24dp"
+            android:title="Provide" />
+        <item
+            android:id="@+id/nav_demand"
+            android:icon="@drawable/ic_bow_tie_black_24dp"
+            android:title="Demand" />
+        <item
+            android:id="@+id/nav_my_selling"
+            android:icon="@drawable/ic_view_headline_black_24dp"
+            android:title="My Selling" />
+        <item
+            android:id="@+id/nav_my_purchase"
+            android:icon="@drawable/ic_view_headline_black_24dp"
+            android:title="My Purchase" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout_black_24dp"
+            android:title="Logout" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Share" />
+    </group>
+</menu>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+  <android.support.design.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.UserDetailsActivity">
+
+    <android.support.design.widget.AppBarLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:theme="@style/AppTheme.AppBarOverlay">
+
+      <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior">
+      <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+          android:id="@+id/ivBanner"
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toTopOf="@id/glDetails"
+          android:background="@color/colorPrimaryLight"/>
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+          android:id="@+id/civAvatar"
+          android:layout_width="160dp"
+          android:layout_height="160dp"
+          android:layout_marginTop="16dp"
+          android:src="@drawable/ic_person_black_24dp"
+          app:civ_border="false"
+          android:scaleType="centerCrop"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:src="@tools:sample/backgrounds/scenic"/>
+
+        <TextView
+          android:id="@+id/tvFullName"
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:ellipsize="end"
+          android:maxLines="1"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          android:textSize="18sp"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/civAvatar"
+          tools:text="@tools:sample/full_names"/>
+
+
+        <android.support.v7.widget.GridLayout
+          android:id="@+id/glDetails"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="18dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          app:columnCount="3"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/tvFullName"
+          app:rowCount="3">
+
+          <Button
+            android:id="@+id/btnImages"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:textColor="@android:color/black"
+            android:drawableTop="@drawable/ic_image_black_24dp"
+            android:text="images"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="0"
+            app:layout_rowWeight="1"/>
+
+          <Button
+            android:id="@+id/btnVideos"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:drawableTop="@drawable/ic_video_library_black_24dp"
+            android:text="Videos"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_row="0"
+            app:layout_rowWeight="1"/>
+
+          <Button
+            android:id="@+id/btnProducts"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:drawableTop="@drawable/ic_shopping_basket_black_24dp"
+            android:text="Products"
+            app:layout_column="2"
+            app:layout_columnWeight="1"
+            app:layout_row="0"
+            app:layout_rowWeight="1"/>
+
+          <Button
+            android:id="@+id/btnFriends"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:drawableTop="@drawable/ic_user_group_black_24dp"
+            android:text="Friends"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="1"
+            app:layout_rowWeight="1"/>
+
+          <Button
+            android:id="@+id/btnProvide"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:drawableTop="@drawable/ic_file_document_black_24dp"
+            android:text="Provide"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_row="1"
+            app:layout_rowWeight="1"/>
+
+          <Button
+            android:id="@+id/btnDemand"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:drawableTop="@drawable/ic_bow_tie_black_24dp"
+            android:text="Demand"
+            app:layout_column="2"
+            app:layout_columnWeight="1"
+            app:layout_row="1"
+            app:layout_rowWeight="1"/>
+
+        </android.support.v7.widget.GridLayout>
+
+        <LinearLayout
+          android:id="@+id/llMessageAddFriend"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginTop="8dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/glDetails">
+          <FrameLayout
+            android:id="@+id/flMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/background_capsule_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+              android:layout_width="34dp"
+              android:layout_height="34dp"
+              android:layout_gravity="center_vertical"
+              android:layout_marginLeft="2dp"
+              android:background="@drawable/bg_circle"
+              android:padding="4dp">
+
+              <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_message_black_24dp"
+                android:tint="@android:color/black" />
+
+            </FrameLayout>
+
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_vertical"
+              android:layout_marginLeft="44dp"
+              android:layout_marginRight="10dp"
+              android:text="Message"
+              android:textColor="@android:color/white"
+              android:textStyle="bold" />
+          </FrameLayout>
+          <FrameLayout
+            android:id="@+id/flAddFriend"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/background_capsule_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+              android:layout_width="34dp"
+              android:layout_height="34dp"
+              android:layout_gravity="center_vertical"
+              android:layout_marginLeft="2dp"
+              android:background="@drawable/bg_circle"
+              android:padding="4dp">
+
+              <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_person_add_black_24dp"
+                android:tint="@android:color/black" />
+
+            </FrameLayout>
+
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_vertical"
+              android:layout_marginLeft="44dp"
+              android:layout_marginRight="10dp"
+              android:text="Add Friend"
+              android:textColor="@android:color/white"
+              android:textStyle="bold" />
+          </FrameLayout>
+        </LinearLayout>
+
+      </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+  </android.support.design.widget.CoordinatorLayout>
+</layout>
