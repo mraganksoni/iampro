@@ -9,17 +9,9 @@
         android:title="search"
         android:icon="@drawable/search"/>
     <item
-        android:id="@+id/bot_nav_cart"
-        android:title="cart"
-        android:icon="@drawable/cart"/>
-    <item
         android:id="@+id/bot_nav_home"
         android:title="home"
         android:icon="@drawable/iampro"/>
-    <item
-        android:id="@+id/bot_nav_notification"
-        android:title="notification"
-        android:icon="@drawable/notify"/>
     <item
         android:id="@+id/bot_nav_chat"
         android:title="chat"
@@ -28,6 +20,5 @@
         android:id="@+id/bot_nav_user"
         android:title="login"
         android:icon="@drawable/login"/>
-
 
 </menu>

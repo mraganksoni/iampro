@@ -12,6 +12,10 @@
             android:id="@+id/nav_register"
             android:icon="@drawable/ic_person_black_24dp"
             android:title="Register" />
+        <item
+            android:id="@+id/nav_forget"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Forget Password" />
     </group>
 
     <item android:title="More">

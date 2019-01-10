@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.bot_nav_home:
               showHomeFragment();
               return true;
-            case R.id.bot_nav_cart:
+            case R.id.bot_nav_user:
               showCartFragment();
               return true;
             case R.id.bot_nav_chat:
@@ -175,14 +175,21 @@ public class MainActivity extends AppCompatActivity
   public boolean onNavigationItemSelected(MenuItem item) {
     // Handle navigation view item clicks here.
     int id = item.getItemId();
-
-    if (id == R.id.nav_login) {
-      Intent intent = new Intent(this, LoginActivity.class);
-      startActivity(intent);
-    }
-
+    Intent intent;
     // Logged in Menus handler
     switch (id) {
+      case R.id.nav_login:
+        intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        break;
+      case R.id.nav_register:
+        intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        break;
+      case R.id.nav_forget:
+        intent = new Intent(this, ForgetActivity.class);
+        startActivity(intent);
+        break;
       case R.id.nav_dashboard:
         if (!homeFragment.isVisible()) {
           showHomeFragment();
