@@ -44,7 +44,7 @@ public class OTPforgetFregment extends Fragment {
      *********************************** */
     SharedPreferences loginSharedPreferences;
 
-    public OTPforgetFregment() {
+    public otpforgetFregment() {
         // Required empty public constructor
     }
 
@@ -52,7 +52,7 @@ public class OTPforgetFregment extends Fragment {
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fregment_forget, container, false);
+        return inflater.inflate(R.layout.fragment_otpforget, container, false);
     }
 
     @Override
