@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.mssinfotech.iampro.co.R;
 import com.mssinfotech.iampro.co.viewmodels.ForgetViewModel;
 
-public class OTPforgetFregment extends Fragment {
+public class otpforgetFregment extends Fragment {
     public String OTP,Email;
     /* ***********************************
      * View References
@@ -44,7 +44,7 @@ public class OTPforgetFregment extends Fragment {
      *********************************** */
     SharedPreferences loginSharedPreferences;
 
-    public otpforgetFragment() {
+    public otpforgetFregment() {
         // Required empty public constructor
     }
 
