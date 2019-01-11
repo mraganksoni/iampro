@@ -44,7 +44,7 @@ public class OTPforgetFregment extends Fragment {
      *********************************** */
     SharedPreferences loginSharedPreferences;
 
-    public otpforgetFregment() {
+    public otpforgetFragment() {
         // Required empty public constructor
     }
 
