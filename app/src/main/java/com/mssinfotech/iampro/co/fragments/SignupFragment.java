@@ -21,6 +21,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -35,6 +37,8 @@ import com.mssinfotech.iampro.co.viewmodels.RegisterViewModel;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -55,7 +59,7 @@ public class SignupFragment extends Fragment {
   private EditText etEmail;
   private EditText etPassword;
   private EditText etcPassword;
-
+   private Spinner sp_profession;
 
   //RegisterViewModel loginViewModel;
   RegisterViewModel registerViewModel;
@@ -63,7 +67,7 @@ public class SignupFragment extends Fragment {
    * SharedPreferences
    *********************************** */
   SharedPreferences loginSharedPreferences;
-
+   ArrayList<String>  al_prof;
   public SignupFragment() {
     // Required empty public constructor
   }
@@ -108,6 +112,30 @@ public class SignupFragment extends Fragment {
     etEmail = view.findViewById(R.id.etEmail);
     etPassword = view.findViewById(R.id.etPassword);
     etcPassword= view.findViewById(R.id.etCPassword);
+    sp_profession=view.findViewById(R.id.spProfession);
+    String[] array = {"A", "B", "C"};
+    String abc = "";
+
+    Spinner spinner = new Spinner(getContext());
+    ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, array);
+    //selected item will look like a spinner set from XML
+    spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    spinner.setAdapter(spinnerArrayAdapter);
+
+    sp_profession.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+      @Override
+      public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+        // your code here
+        Toast.makeText(getActivity().getApplicationContext(),"Selected",Toast.LENGTH_LONG).show();
+      }
+
+      @Override
+      public void onNothingSelected(AdapterView<?> parentView) {
+        // your code here
+        Toast.makeText(getActivity().getApplicationContext(),"NothingSelected",Toast.LENGTH_LONG).show();
+      }
+
+    });
   }
 
   private void hookViews() {
