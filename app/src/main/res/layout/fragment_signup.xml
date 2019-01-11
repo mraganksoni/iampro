@@ -20,7 +20,7 @@
  android:layout_width="match_parent"
  android:layout_height="match_parent"
  android:background="@android:color/white"
- tools:context=".fragments.SignupFragment">  -->
+ tools:context=".fragments.SignupFragment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -29,12 +29,12 @@
         android:layout_marginTop="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:src="@drawable/high_res_logo"
+        android:src="@drawable/iampro"
         android:transitionName="image"
         android:layout_gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"/>-->
     <Spinner
         android:id="@+id/spProfession"
         android:layout_width="match_parent"
