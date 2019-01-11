@@ -64,8 +64,10 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
             loginFragment.setEnterTransition(fadeTransition);
             loginFragment.setExitTransition(fadeTransition);
         }
-        //final View sharedImageView = homeFragment.getView().findViewById(R.id.imageView);
-        //final View sharedLoginButton = homeFragment.getView().findViewById(R.id.btnLogin);
+        Bundle args = new Bundle();
+        args.putString("name", "mragank");
+        loginFragment.setArguments(args);
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(android.R.id.content, loginFragment, "LOGIN")
@@ -85,6 +87,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
             signupFragment.setExitTransition(fadeTransition);
 
         }
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(android.R.id.content, signupFragment, "SIGNUP")

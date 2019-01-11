@@ -10,6 +10,11 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +32,7 @@ import org.greenrobot.eventbus.EventBus;
 
 /** A simple {@link Fragment} subclass. */
 public class LoginFragment extends Fragment {
-
+  private FragmentActivity myContext;
   /* ***********************************
    * View References
    *********************************** */
@@ -47,16 +52,16 @@ public class LoginFragment extends Fragment {
    * SharedPreferences
    *********************************** */
   SharedPreferences loginSharedPreferences;
-
+  ForgetFregment forgetFregment;
   public LoginFragment() {
     // Required empty public constructor
+
   }
 
   @Override
-  public View onCreateView(
-      LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_login, container, false);
+  public View onCreateView(  LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_login, container, false);
   }
 
   @Override
@@ -68,6 +73,10 @@ public class LoginFragment extends Fragment {
 
     loginSharedPreferences = Objects.requireNonNull(getContext())
         .getSharedPreferences(LoginPreferencesConstants.PREF_NAME, Context.MODE_PRIVATE);
+
+    Bundle bundle=getArguments();
+    String value = bundle.getString("name");
+    Log.e("get exttra","outpu - "+value);
 
     initViews(view);
     hookViews();
@@ -95,10 +104,35 @@ public class LoginFragment extends Fragment {
         });
     tvForgotPassword.setOnClickListener(v -> {
       EventBus.getDefault().post(new NewLoginEvent(false));
-      Toast.makeText(getContext().getApplicationContext(), "fired", Toast.LENGTH_SHORT).show();
+      showForgetfregment();
     });
   }
 
+  private void showForgetfregment(){
+    if (forgetFregment == null) {
+      forgetFregment = new ForgetFregment();
+      Transition modeTransition = TransitionInflater.from(myContext).inflateTransition(android.R.transition.move);
+      Transition fadeTransition = TransitionInflater.from(myContext).inflateTransition(android.R.transition.fade);
+      forgetFregment.setSharedElementEnterTransition(modeTransition);
+      forgetFregment.setSharedElementReturnTransition(modeTransition);
+      forgetFregment.setEnterTransition(fadeTransition);
+      forgetFregment.setExitTransition(fadeTransition);
+
+    }
+        /*
+        Bundle args = new Bundle();
+        args.putString("name", "mragank");
+        loginFragment.setArguments(args);
+        */
+
+    FragmentManager fragmentManager = myContext.getSupportFragmentManager();
+    fragmentManager.beginTransaction()
+            .replace(android.R.id.content, forgetFregment, "FORGET")
+            .setTransition(android.R.transition.move)
+            .addToBackStack("FORGOT")
+            .commit();
+
+  }
   private void hookIntoViewModel() {
     loginViewModel
         .getLoginStatus()
