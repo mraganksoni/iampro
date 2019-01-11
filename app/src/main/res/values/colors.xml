@@ -18,4 +18,5 @@
   <color name="loginPrimary">#1ba7ff</color>
   <color name="loginPrimaryDark">#1270ab</color>
   <color name="loginAccent">#ec3636</color>
+  <color name="black_overlay">#66000000</color>
 </resources>
