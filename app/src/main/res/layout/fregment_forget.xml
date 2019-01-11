@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".fragments.LoginFragment">
+    tools:context=".fragments.ForgetFregment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilUsername"
+        android:id="@+id/tilEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
@@ -32,15 +32,16 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="@+id/tilPassword"
         app:layout_constraintStart_toStartOf="@+id/tilPassword">
+
         <EditText
-            android:id="@+id/etUsername"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/loginPrimaryDark"
-            android:hint="Username"
-            android:inputType="text"
+            android:hint="Enter Email Address"
+            android:inputType="textEmailAddress"
             android:textColor="@color/loginPrimaryDark"
-            tools:text="jatkeshave"/>
+            tools:text="" />
     </android.support.design.widget.TextInputLayout>
 
 
@@ -54,7 +55,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnForget"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -66,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="334dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="334dp" />
 
 </android.support.constraint.ConstraintLayout>
