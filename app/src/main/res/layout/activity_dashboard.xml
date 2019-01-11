@@ -43,7 +43,6 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="0dp">
-
                 <ImageView
                     android:id="@+id/imgsignup"
                     android:layout_width="120dp"
