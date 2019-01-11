@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import com.mssinfotech.iampro.co.events.NewLoginEvent;
+import com.mssinfotech.iampro.co.fragments.ForgetFregment;
 import com.mssinfotech.iampro.co.models.CurrentUser;
 import com.mssinfotech.iampro.co.utils.ApiEndpoints;
 import com.mssinfotech.iampro.co.utils.LoginPreferencesConstants;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity
    ************************ */
   private SearchFragment searchFragment;
   private HomeFragment homeFragment;
+  private ForgetFregment forgetFragment;
   private CartFragment cartFragment;
   private ChatFragment chatFragment;
 
@@ -187,8 +189,9 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
         break;
       case R.id.nav_forget:
-        intent = new Intent(this, ForgetActivity.class);
-        startActivity(intent);
+        if (!forgetFragment.isVisible()) {
+          showForgetFragment();
+        }
         break;
       case R.id.nav_dashboard:
         if (!homeFragment.isVisible()) {
@@ -271,7 +274,34 @@ public class MainActivity extends AppCompatActivity
     }
     fragmentTransaction.commit();
   }
+  private void showForgetFragment(){
+    // If fragment isn't initialized then initialize it
+    if (forgetFragment == null) {
+      this.forgetFragment = new ForgetFregment();
+    }
 
+    // If current Fragment is already visible on screen then no need to do anything
+    if (forgetFragment.isVisible()) {
+      Log.d(TAG, "showHomeFragment: Currently showing this fragment, no need to change");
+      return;
+    }
+
+    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+    // Check if fragment is already added to fragment manager
+    if (!forgetFragment.isAdded()) {
+      fragmentTransaction
+              .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+              .add(R.id.fragmentContainer, forgetFragment)
+              .show(forgetFragment);
+      hideAllFragments();
+    } else {
+      fragmentTransaction
+              .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+              .show(forgetFragment);
+      hideAllFragments();
+    }
+    fragmentTransaction.commit();
+  }
   private void showHomeFragment() {
     // If fragment isn't initialized then initialize it
     if (homeFragment == null) {
