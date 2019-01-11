@@ -30,17 +30,16 @@ public class DashboardActivity extends Activity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId() /*to get clicked view id**/) {
             case R.id.imglogin:
-
                 Intent i_login = new Intent(DashboardActivity.this,LoginActivity.class);
                 DashboardActivity.this.startActivity(i_login);
                 break;
             case R.id.imgsignup:
-
-                Intent i_signup = new Intent(DashboardActivity.this,SignupFragment.class);
+                //Intent i_signup = new Intent(DashboardActivity.this,SignupFragment.class);
+                //DashboardActivity.this.startActivity(i_signup);
+                Intent i_signup = new Intent(DashboardActivity.this,LoginActivity.class);
                 DashboardActivity.this.startActivity(i_signup);
                 break;
             case R.id.imghome:
-
                 Intent i_home = new Intent(DashboardActivity.this,MainActivity.class);
                 DashboardActivity.this.startActivity(i_home);
                 DashboardActivity.this.finish();
